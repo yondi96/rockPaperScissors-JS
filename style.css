@@ -67,3 +67,11 @@ footer {
   bottom: 0;
   right: 0;
 }
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: inline-block;
+}

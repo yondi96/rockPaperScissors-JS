@@ -18,6 +18,7 @@ $(".icon").click(function() {
 
     randomShot();
 
+
   // decide on who won
     if(userChoice == compShot) {
       $(".current-score").html("It's a Tie!");
@@ -41,9 +42,14 @@ $(".icon").click(function() {
 
 
     if(userScore === 3 || enemyScore === 3) {
-      console.log("END GAME");
+      $(".reset-btn").addClass("show");
+      $(".icon").addClass("hide");
       inGame = false;
-      // show button to restart the game (no html & css yet)
+
+      // reset button
+      $(".reset-btn").click(function() {
+        location.reload();
+      })
     }
   }
 })
