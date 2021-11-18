@@ -12,12 +12,9 @@ $(".icon").click(function() {
     userChoice = userShot;
 
     // show user shot by showing an img
-    // use userShot to replace img src
     $(".user-shot-img").attr('src', "img/" + userShot + ".png");
 
-
     randomShot();
-
 
   // decide on who won
     if(userChoice == compShot) {
@@ -36,11 +33,12 @@ $(".icon").click(function() {
       enemyWon();
     }
 
-  // update the score
+  // update the score status
     $(".user-score").html(userScore);
     $(".comp-score").html(enemyScore);
 
 
+  // when either score reaches 3, stop game
     if(userScore === 3 || enemyScore === 3) {
       $(".reset-btn").addClass("show");
       $(".icon").addClass("hide");
@@ -62,6 +60,7 @@ function randomShot() {
   $(".enemy-shot-img").attr('src', "img/" + compShot + ".png");
 }
 
+// show status in UI, update scores
 function userWon() {
   userScore++;
   $(".current-score").html("You Won!");
