@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,10 @@
   <link rel="stylesheet" href="style.css">
   <title>Rock Paper Scissors JavaScript</title>
 </head>
+
 <body>
   <header>
-      <h1 class="header-title">Rock Paper Scissors</h1>
-      <h2 class="header-subtitle">Choose your shot!</h2>
+    <h1 class="header-title">Rock Paper Scissors</h1>
   </header>
 
   <main>
@@ -23,6 +24,7 @@
 
   <footer>
     <h1>SCORE</h1>
+    <h2 class="current-score">Best of 3</h2>
     <div class="scores">
       <h2 class="score-info">YOU</h2>
       <h2 class="score-info">ENEMY</h2>
@@ -31,9 +33,20 @@
       <h2 class="user-score score-info"></h2>
       <h2 class="comp-score score-info"></h2>
     </div>
+    <div class="show-moves">
+      <div class="user-img-container shot-container">
+        <h3>Your Move</h3>
+        <img class="user-shot-img shot-img" src="img/blank.png" alt="blank-img">
+      </div>
+      <div class="enemy-img-container shot-container">
+        <h3>Enemy Move</h3>
+        <img class="enemy-shot-img shot-img" src="img/blank.png" alt="-blank-img">
+      </div>
+    </div>
   </footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="code.js" charset="utf-8"></script>
 </body>
+
 </html>

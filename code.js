@@ -1,41 +1,50 @@
 const shots = ["rock", "paper", "scissors"];
 let userChoice, compShot;
-let inGame = false;
+let inGame = true;
 let userScore = 0;
 let enemyScore = 0;
 
 
 // listen to user click
 $(".icon").click(function() {
-  let userShot = $(this).attr("id");
-  userChoice = userShot;
-  randomShot();
+  if(inGame) {
+    let userShot = $(this).attr("id");
+    userChoice = userShot;
 
-  if(userChoice == compShot) {
-    console.log("tie");
-  } else if(userChoice == "rock" && compShot == "scissors") {
-    console.log("You Won!");
-    userScore++;
-  } else if(userChoice == "rock" && compShot == "paper") {
-    console.log("You Lose");
-    enemyScore++;
-  } else if(userChoice == "scissors" && compShot == "paper") {
-    console.log("You win!");
-    userScore++;
-  } else if(userChoice == "scissors" && compShot == "rock") {
-    console.log("You lose.");
-    enemyScore++;
-  } else if(userChoice == "paper" && compShot == "rock") {
-    console.log("You win!");
-    userScore++;
-  } else if(userChoice == "paper" && compShot == "scissors") {
-    console.log("You lose.");
-    enemyScore++;
-  }
+    // show user shot by showing an img
+    // use userShot to replace img src
+    $(".user-shot-img").attr('src', "img/" + userShot + ".png");
 
-  // this is wrong
-  if(userScore === 3 || enemyScore === 3) {
-    console.log("END GAME");
+
+    randomShot();
+
+  // decide on who won
+    if(userChoice == compShot) {
+      $(".current-score").html("It's a Tie!");
+    } else if(userChoice == "rock" && compShot == "scissors") {
+      userWon();
+    } else if(userChoice == "rock" && compShot == "paper") {
+      enemyWon();
+    } else if(userChoice == "scissors" && compShot == "paper") {
+      userWon();
+    } else if(userChoice == "scissors" && compShot == "rock") {
+      enemyWon();
+    } else if(userChoice == "paper" && compShot == "rock") {
+      userWon();
+    } else if(userChoice == "paper" && compShot == "scissors") {
+      enemyWon();
+    }
+
+  // update the score
+    $(".user-score").html(userScore);
+    $(".comp-score").html(enemyScore);
+
+
+    if(userScore === 3 || enemyScore === 3) {
+      console.log("END GAME");
+      inGame = false;
+      // show button to restart the game (no html & css yet)
+    }
   }
 })
 
@@ -43,6 +52,17 @@ $(".icon").click(function() {
 function randomShot() {
   let randomNum = Math.floor(Math.random()*3);
   compShot = shots[randomNum];
-  $(".user-score").html(userScore);
-  $(".comp-score").html(enemyScore);
+
+  $(".enemy-shot-img").attr('src', "img/" + compShot + ".png");
+  $(".user-move").prepend("test");
+}
+
+function userWon() {
+  userScore++;
+  $(".current-score").html("You Won!");
+}
+
+function enemyWon() {
+  enemyScore++;
+  $(".current-score").html("You Lose");
 }
