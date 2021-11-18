@@ -60,7 +60,6 @@ function randomShot() {
   compShot = shots[randomNum];
 
   $(".enemy-shot-img").attr('src', "img/" + compShot + ".png");
-  $(".user-move").prepend("test");
 }
 
 function userWon() {
