@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style-tailwind.css">
+  <link rel="stylesheet" href="../style.css">
+  <title>Rock Paper Scissors JavaScript</title>
+</head>
+
+<body class="bg-blue-400">
+  <header>
+    <h1 class="text-6xl font-normal leading-normal mt-0 mb-2 text-red-800 p-16">Rock Paper Scissors</h1>
+  </header>
+
+  <main>
+    <div class="img-container">
+      <img id="rock" class="icon rock" src="../img/rock.png" alt="rock">
+      <img id="paper" class="icon paper" src="../img/paper.png" alt="paper">
+      <img id="scissors" class="icon scissors" src="../img/scissors.png" alt="scissors">
+    </div>
+  </main>
+
+  <footer>
+    <h1>SCORE</h1>
+    <h2 class="current-score">Best of 3</h2>
+    <div class="scores">
+      <h2 class="score-info">YOU</h2>
+      <h2 class="score-info">ENEMY</h2>
+    </div>
+    <div class="scores">
+      <h2 class="user-score score-info"></h2>
+      <h2 class="comp-score score-info"></h2>
+    </div>
+    <div class="show-moves">
+      <div class="user-img-container shot-container">
+        <h3>Your Move</h3>
+        <img class="user-shot-img shot-img" src="../img/blank.png" alt="blank-img">
+      </div>
+      <div class="enemy-img-container shot-container">
+        <h3>Enemy Move</h3>
+        <img class="enemy-shot-img shot-img" src="../img/blank.png" alt="blank-img">
+      </div>
+    </div>
+    <button class="reset-btn hide rounded-full bg-transparent hover:bg-blue-500 text-yellow-700 font-semibold hover:text-white py-2 px-4 border border-black-500 hover:border-transparent rounded" type="button" name="button">Play Again</button>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="../code.js" charset="utf-8"></script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "rockpaperscissors-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "code.js",
+  "scripts": {
+    "build:css": "tailwind build src/tailw.css -o dist/style-tailwind.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yondi96/rockPaperScissors-JS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yondi96/rockPaperScissors-JS/issues"
+  },
+  "homepage": "https://github.com/yondi96/rockPaperScissors-JS#readme",
+  "dependencies": {
+    "tailwindcss": "^2.2.19"
+  }
+}

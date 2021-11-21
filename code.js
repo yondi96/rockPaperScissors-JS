@@ -7,14 +7,15 @@ let enemyScore = 0;
 
 // listen to user click
 $(".icon").click(function() {
+  randomShot();
+
   if(inGame) {
     let userShot = $(this).attr("id");
     userChoice = userShot;
 
     // show user shot by showing an img
-    $(".user-shot-img").attr('src', "img/" + userShot + ".png");
+    $(".user-shot-img").attr('src', "../img/" + userShot + ".png");
 
-    randomShot();
 
   // decide on who won
     if(userChoice == compShot) {
@@ -57,7 +58,7 @@ function randomShot() {
   let randomNum = Math.floor(Math.random()*3);
   compShot = shots[randomNum];
 
-  $(".enemy-shot-img").attr('src', "img/" + compShot + ".png");
+  $(".enemy-shot-img").attr('src', "../img/" + compShot + ".png");
 }
 
 // show status in UI, update scores
